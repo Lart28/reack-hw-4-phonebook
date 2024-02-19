@@ -12,9 +12,9 @@ export default function App() {
     () => JSON.parse(window.localStorage.getItem(LS_KEY)) ?? []);
   const [filter, setFilter] = useState('');
 
-  const changeFilter = (e) => {
-    setFilter(e.currentTarget.value);
-  }
+  // const changeFilter = (e) => {
+  //   setFilter(e.currentTarget.value);
+  // }
 
   const formSubmitHandler = (data) => {
     const newContact = {
@@ -46,7 +46,7 @@ export default function App() {
         <Title>Phonebook</Title>
         <Form onSubmit={formSubmitHandler} />
         <Title2>Contacts</Title2>
-        <Filter value={filter} onChange={changeFilter}/>
+        <Filter value={filter} onChange={setFilter}/>
         <Contacts contacts={filteredContacts} onDeleteContact={deleteContact} />
       </>
     )
